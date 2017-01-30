@@ -1,0 +1,36 @@
+{
+  "name": "icarus/kdyby-doctrine-traits",
+  "type": "library",
+  "description": "",
+  "keywords": [
+    "kdyby",
+    "doctrine",
+    "query object",
+    "traits"
+  ],
+  "license": [
+    "MIT"
+  ],
+  "support": {
+    "issues": "https://github.com/MadeByIcarus/KdybyDoctrineQueryObjectTraits/issues"
+  },
+  "authors": [
+    {
+      "name": "Pavel Gajdoš"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Icarus\\Doctrine\\QueryObject\\": "src/"
+    }
+  },
+  "autoload-dev": {
+  },
+  "require": {
+    "php": ">=5.6",
+    "kdyby/doctrine": "^3.1"
+  },
+  "require-dev": {
+  },
+  "minimum-stability": "dev"
+}
