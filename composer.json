@@ -20,17 +20,12 @@
     }
   ],
   "autoload": {
-    "psr-4": {
-      "Icarus\\Doctrine\\QueryObject\\": "src/"
-    }
+    "classmap": ["src"]
   },
   "autoload-dev": {
   },
   "require": {
     "php": ">=5.6",
     "kdyby/doctrine": "^3.1"
-  },
-  "require-dev": {
-  },
-  "minimum-stability": "dev"
+  }
 }
