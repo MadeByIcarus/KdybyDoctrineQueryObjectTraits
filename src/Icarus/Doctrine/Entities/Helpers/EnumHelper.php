@@ -25,7 +25,7 @@ trait EnumHelper
         }
 
         if (!in_array($enumValue, $allowedValues)) {
-            throw new InvalidArgumentException("Invalid value '$enumValue'. Must be one of the values of constants prefixed with '$constantsPrefix'.");
+            throw new InvalidArgumentException("Invalid value '$enumValue'. Must be one of '" . __CLASS__ . "::$constantsPrefix*'.");
         }
     }
 }
