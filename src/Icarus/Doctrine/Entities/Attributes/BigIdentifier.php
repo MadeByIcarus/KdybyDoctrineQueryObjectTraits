@@ -1,22 +1,15 @@
-<?php // lint >= 5.4
+<?php
 
 /**
- * This file is part of the Kdyby (http://www.kdyby.org)
- *
- * Copyright (c) 2008, 2012 Filip Procházka (filip@prochazka.su)
- *
- * For the full copyright and license information, please view the file license.md that was distributed with this source code.
+ * Inspired by Kdyby\Doctrine\Entities\Attributes\Identifier
  */
 
 namespace Icarus\Doctrine\Entities\Attributes;
 
+
 use Doctrine\ORM\Mapping as ORM;
 
 
-
-/**
- * @author Pavel Gajdoš <pavel.gajdos@gmail.com>
- */
 trait BigIdentifier
 {
 
