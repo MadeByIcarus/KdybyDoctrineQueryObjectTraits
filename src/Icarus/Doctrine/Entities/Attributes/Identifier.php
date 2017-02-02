@@ -2,6 +2,7 @@
 
 /**
  * Inspired by Kdyby\Doctrine\Entities\Attributes\Identifier
+ * Added 'unsigned' flag to column $id
  */
 
 namespace Icarus\Doctrine\Entities\Attributes;
@@ -10,12 +11,12 @@ namespace Icarus\Doctrine\Entities\Attributes;
 use Doctrine\ORM\Mapping as ORM;
 
 
-trait BigIdentifier
+trait Identifier
 {
 
     /**
      * @ORM\Id
-     * @ORM\Column(type="bigint", options={"unsigned"=true})
+     * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
      * @var integer
      */
