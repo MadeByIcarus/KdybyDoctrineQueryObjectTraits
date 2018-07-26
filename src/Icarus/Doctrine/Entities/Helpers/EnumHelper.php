@@ -10,14 +10,15 @@ use Nette\Utils\Strings;
 
 trait EnumHelper
 {
+    use Reflection;
 
     private function checkEnumValue($constantsPrefix, $enumValue)
     {
         $allowedValues = [];
         if (!$constantsPrefix) {
-            $allowedValues = $this->reflection->getConstants();
+            $allowedValues = $this->getReflection()->getConstants();
         } else {
-            foreach ($this->reflection->getConstants() as $name => $value) {
+            foreach ($this->getReflection()->getConstants() as $name => $value) {
                 if (Strings::startsWith($name, $constantsPrefix)) {
                     $allowedValues[$name] = $value;
                 }
