@@ -15,16 +15,16 @@ use Nette\Utils\Strings;
 
 trait AssignmentHelper
 {
-    use Reflection;
 
     public function assignValues(array $values)
     {
+        $reflection = new \ReflectionObject($this);
         foreach ($values as $key => $value) {
             $method = "set" . Strings::firstUpper($key);
 
-            if ($this->getReflection()->hasMethod($method)) {
+            if ($reflection->hasMethod($method)) {
                 $this->{$method}($value);
-            } else if ($this->getReflection()->hasProperty($key)) {
+            } else if ($reflection->hasProperty($key)) {
                 $this->$key = $value;
             } else {
                 throw new InvalidArgumentException("Entity does not have property '$key' or method '$method'.");
@@ -36,9 +36,10 @@ trait AssignmentHelper
 
     public function getValues($whitelist = null, $blacklist = ['id'])
     {
+        $reflection = new \ReflectionObject($this);
         $list = [];
 
-        foreach ($this->getReflection()->getProperties() as $property) {
+        foreach ($reflection->getProperties() as $property) {
             if ($whitelist) {
                 if (in_array($property->getName(), $whitelist)) {
                     $list[] = $property->getName();
